@@ -62,9 +62,19 @@ body {
 #titulo-menu {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Nome da empresa (branding) */
+.brand {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 #texto-menusuperior {
@@ -235,4 +245,9 @@ footer {
   #titulo-menu {
     font-size: 1.8rem;
   }
+
+  .brand {
+  font-size: 2.2rem;
+}
+
 }
