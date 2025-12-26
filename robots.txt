@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hypermsa.com.br/sitemap.xml
