@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Base com Azul Profundo para realçar o Logo Branco */
+        /* Base em Cinza Claro/Branco para destacar logos com partes brancas ou coloridas */
         * {
             margin: 0;
             padding: 0;
@@ -16,38 +16,35 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* Azul Escuro (Slate 900) para dar contraste ao logo branco */
-            color: #f1f5f9; /* Texto claro */
+            background-color: #f8fafc; /* Cinza gelo muito claro */
+            color: #1e293b; /* Texto escuro para contraste no fundo claro */
             word-wrap: break-word;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        /* Hero com gradiente que traz profundidade */
+        /* Hero com fundo levemente acinzentado para profundidade */
         .hero-gradient {
-            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent),
-                        radial-gradient(circle at bottom left, rgba(30, 58, 138, 0.2), transparent);
+            background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%);
             position: relative;
-            overflow: hidden;
         }
 
-        /* Cards em estilo "Glassmorphism" para fundo escuro */
+        /* Cartões com sombras suaves (estilo Clean Tech) */
         .glass-card {
-            background: rgba(147, 158, 176, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.4);
+            border-color: #3b82f6;
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
         .text-gradient {
-            background: linear-gradient(to right, #c6d9f0, #3b82f6, #2563eb);
+            background: linear-gradient(to right, #2563eb, #1d4ed8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -57,47 +54,55 @@
         .service-bg-2 { background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800'); }
         .service-bg-3 { background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'); }
         
-        /* Logo Ajustado para brilhar no fundo escuro */
+        /* Ajuste do Logo: Agora em fundo claro, o logo aparecerá perfeitamente */
         .logo-img {
-            max-height: 120px;
+            max-height: 80px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
         }
 
-        /* Título em branco para o fundo azul */
         #titulo-menu {
             font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 800;
             line-height: 1.1;
-            color: #ffffff;
+            color: #0f172a;
+        }
+
+        .nav-link {
+            color: #475569;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #2563eb;
         }
     </style>
 </head>
 <body class="min-h-screen">
 
-    <!-- Navegação (Fundo Azul Translúcido) -->
-    <nav class="fixed w-full z-50 border-b border-white/5 bg-[#0f172a]/80 backdrop-blur-md">
+    <!-- Navegação (Fundo Branco com Sombra Sutil) -->
+    <nav class="fixed w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center">
-                <!-- Agora o logo branco ficará visível neste fundo azul escuro -->
-                <img src="imagens/logo.svg" alt="HyperMSA Logo" class="logo-img" onerror="this.onerror=null; this.src='https://hypermsa.com.br/logo.png';">
+                <!-- Logo em fundo claro -->
+                <img src="imagens/Logo.png" alt="HyperMSA Logo" class="logo-img" onerror="this.onerror=null; this.src='https://hypermsa.com.br/logo.png';">
             </a>
             
-            <div class="hidden md:flex items-center space-x-8 text-sm font-bold text-slate-300">
-                <a href="#sobre" class="hover:text-white transition">Quem Somos</a>
-                <a href="#servicos" class="hover:text-white transition">Serviços</a>
-                <a href="#contato" class="bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-900/40">Fale Conosco</a>
+            <div class="hidden md:flex items-center space-x-8 text-sm">
+                <a href="#sobre" class="nav-link">Quem Somos</a>
+                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#contato" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md shadow-blue-200">Fale Conosco</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero-gradient pt-48 pb-24 px-6">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <div class="texto-menu space-y-8">
-                <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full text-blue-400 text-sm font-bold">
-                    <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+                <div class="inline-flex items-center space-x-2 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full text-blue-600 text-sm font-bold">
+                    <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
                     <span>Inteligência que escala seu negócio</span>
                 </div>
                 <h1 id="titulo-menu">
@@ -105,105 +110,109 @@
                     <span class="text-gradient">Automação</span> <br>
                     começa aqui.
                 </h1>
-                <p id="texto-menusuperior" class="text-slate-400 text-lg max-w-lg leading-relaxed font-medium">
-                    A HyperMSA é especialista em Hyperautomação, unindo RPA, Cloud e Inteligência Artificial para eliminar burocracias e acelerar resultados.
+                <p id="texto-menusuperior" class="text-slate-600 text-lg max-w-lg leading-relaxed">
+                    A HyperMSA é especialista em Hyperautomação, integrando RPA e IA para transformar processos complexos em fluxos ágeis.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://wa.me/5511974290558" target="_blank" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-center hover:bg-blue-700 transition shadow-xl shadow-blue-600/40">
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="https://wa.me/5511974290558" target="_blank" class="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-center hover:bg-blue-700 transition shadow-lg shadow-blue-200 text-lg">
                         Começar Transformação
                     </a>
                 </div>
             </div>
 
             <div class="relative">
-                <div class="glass-card p-10 rounded-3xl relative z-10 overflow-hidden">
-                    <div class="space-y-6">
-                        <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center shadow-inner">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <div class="glass-card p-10 rounded-3xl relative z-10">
+                    <div class="space-y-8">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200">
+                            <svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
-                        <h3 class="text-3xl font-bold text-white">Eficiência Operacional</h3>
-                        <p class="text-slate-300 leading-relaxed">Não apenas automatizamos tarefas, redesenhamos processos para que sua equipe foque no que é estratégico.</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-center space-x-3 text-sm font-bold text-slate-200">
-                                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
-                                <span>Redução de erros humanos em até 99%</span>
-                            </li>
-                            <li class="flex items-center space-x-3 text-sm font-bold text-slate-200">
-                                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
-                                <span>Operação 24/7 sem interrupções</span>
-                            </li>
-                        </ul>
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Eficiência sem Limites</h3>
+                            <p class="text-slate-600 leading-relaxed">Reduza custos operacionais e elimine erros manuais com uma infraestrutura digital robusta.</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                                <span class="block text-2xl font-bold text-blue-600">100%</span>
+                                <span class="text-xs text-slate-500 font-bold uppercase tracking-wider">Escalável</span>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                                <span class="block text-2xl font-bold text-blue-600">ROI</span>
+                                <span class="text-xs text-slate-500 font-bold uppercase tracking-wider">Acelerado</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="absolute -inset-6 bg-blue-500/20 blur-3xl rounded-full opacity-50"></div>
+                <!-- Detalhe estético -->
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-100 rounded-full blur-3xl opacity-60"></div>
             </div>
         </div>
     </header>
 
     <!-- Sobre -->
-    <section id="sobre" class="py-24 px-6 bg-[#0f172a]">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1">
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" alt="Equipe Tech" class="rounded-3xl shadow-2xl border border-white/10">
+    <section id="sobre" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="order-2 md:order-1 relative">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" alt="Equipe HyperMSA" class="rounded-3xl shadow-xl border border-slate-100">
             </div>
-            <div class="space-y-6 order-1 md:order-2 text-left">
-                <h2 class="text-blue-500 font-bold uppercase tracking-wider text-sm">Quem Somos</h2>
-                <h3 class="text-4xl font-extrabold text-white">Especialistas em <span class="text-blue-500">Hyperautomação</span></h3>
-                <p class="text-slate-400 leading-relaxed text-lg">
-                    Nascemos com a missão de democratizar a alta tecnologia para empresas que buscam escala. Atuamos na intersecção entre processos de negócio e tecnologia de ponta, entregando soluções que geram ROI imediato.
+            <div class="space-y-6 order-1 md:order-2">
+                <h2 class="text-blue-600 font-bold uppercase tracking-wider text-sm">Nossa Missão</h2>
+                <h3 class="text-4xl font-extrabold text-slate-900 leading-tight">Expertise em <span class="text-blue-600">Hyperautomação</span></h3>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    A HyperMSA conecta o potencial estratégico da sua equipe à precisão da tecnologia digital. Redesenhamos processos para que sua empresa atinja novos patamares de produtividade.
                 </p>
-                <p class="text-slate-400 leading-relaxed text-lg">
-                    Nossa equipe é certificada nas principais ferramentas do mercado (UiPath, Microsoft, AWS), garantindo segurança e governança em cada linha de código.
-                </p>
+                <div class="pt-4">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center font-bold">✓</div>
+                        <p class="text-slate-700 font-semibold">Parceria com as maiores nuvens (AWS/Azure)</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center font-bold">✓</div>
+                        <p class="text-slate-700 font-semibold">Implementação de IA Generativa aplicada</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Serviços -->
-    <section id="servicos" class="py-24 px-6 bg-black/20">
+    <section id="servicos" class="py-24 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 space-y-4">
-                <h2 class="text-sm font-bold text-blue-500 uppercase tracking-widest">Nossas Soluções</h2>
-                <h3 class="text-4xl font-bold text-white">O que fazemos por você</h3>
+                <h2 class="text-sm font-bold text-blue-600 uppercase tracking-widest">O que entregamos</h2>
+                <h3 class="text-4xl font-bold text-slate-900">Soluções Inteligentes</h3>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
+                <!-- RPA -->
                 <div class="glass-card rounded-3xl overflow-hidden group">
                     <div class="h-48 bg-cover bg-center relative service-bg-1">
-                        <div class="absolute inset-0 bg-blue-900/60 group-hover:bg-blue-600/40 transition-colors"></div>
+                        <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-blue-600/20 transition-all duration-500"></div>
                     </div>
                     <div class="p-8 space-y-4">
-                        <h4 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">RPA (Robotic Process Automation)</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Criação de força de trabalho digital para lidar com tarefas repetitivas e baseadas em regras em qualquer software.
-                        </p>
+                        <h4 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">RPA Premium</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Automatizamos tarefas repetitivas, liberando seu capital humano para o que realmente importa.</p>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Cloud -->
                 <div class="glass-card rounded-3xl overflow-hidden group">
                     <div class="h-48 bg-cover bg-center relative service-bg-2">
-                        <div class="absolute inset-0 bg-blue-900/60 group-hover:bg-blue-600/40 transition-colors"></div>
+                        <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-blue-600/20 transition-all duration-500"></div>
                     </div>
                     <div class="p-8 space-y-4">
-                        <h4 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Infraestrutura & Cloud</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Migração, otimização e gestão de ambientes em nuvem, garantindo disponibilidade e baixo custo.
-                        </p>
+                        <h4 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Infraestrutura Nuvem</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Arquitetura resiliente e segura para suportar o crescimento acelerado do seu negócio.</p>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- BI -->
                 <div class="glass-card rounded-3xl overflow-hidden group">
                     <div class="h-48 bg-cover bg-center relative service-bg-3">
-                        <div class="absolute inset-0 bg-blue-900/60 group-hover:bg-blue-600/40 transition-colors"></div>
+                        <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-blue-600/20 transition-all duration-500"></div>
                     </div>
                     <div class="p-8 space-y-4">
-                        <h4 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Business Intelligence</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Dashboards em tempo real para tomada de decisão baseada em dados, não em suposições.
-                        </p>
+                        <h4 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Data Intelligence</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Visualização de dados estratégica para decisões rápidas e assertivas.</p>
                     </div>
                 </div>
             </div>
@@ -211,39 +220,39 @@
     </section>
 
     <!-- Rodapé -->
-    <footer id="contato" class="py-20 px-6 border-t border-white/5 bg-[#0b1222]">
+    <footer id="contato" class="py-20 px-6 border-t border-slate-200 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 mb-16">
-                <div class="col-span-2 space-y-6 text-left">
-                    <img src="imagens/logo.svg" alt="HyperMSA Logo" class="logo-img" onerror="this.onerror=null; this.src='https://hypermsa.com.br/logo.png';">
-                    <p class="text-slate-400 max-w-sm text-left font-medium">
-                        Sua parceira estratégica na jornada da transformação digital. Fale com um especialista hoje mesmo.
+                <div class="col-span-2 space-y-6">
+                    <img src="imagens/Logo.png" alt="HyperMSA Logo" class="logo-img" onerror="this.onerror=null; this.src='https://hypermsa.com.br/logo.png';">
+                    <p class="text-slate-500 max-w-sm font-medium">
+                        Sua parceira na jornada de transformação digital e eficiência operacional.
                     </p>
                 </div>
                 
-                <div class="space-y-4 text-left">
-                    <h5 class="text-white font-bold">Contato</h5>
-                    <ul class="text-slate-400 space-y-2 text-sm font-semibold">
-                        <li>📍 São Paulo, SP</li>
+                <div class="space-y-4">
+                    <h5 class="text-slate-900 font-bold">Contato</h5>
+                    <ul class="text-slate-600 space-y-2 text-sm">
+                        <li>📍 São Paulo, Brasil</li>
                         <li>✉️ contato@hypermsa.com.br</li>
                         <li>📞 (11) 97429-0558</li>
                     </ul>
                 </div>
 
-                <div class="space-y-4 text-left">
-                    <h5 class="text-white font-bold">Menu</h5>
-                    <ul class="text-slate-400 space-y-2 text-sm font-semibold">
-                        <li><a href="#sobre" class="hover:text-blue-500 transition">Quem Somos</a></li>
-                        <li><a href="#servicos" class="hover:text-blue-500 transition">Serviços</a></li>
-                        <li><a href="https://wa.me/5511974290558" target="_blank" class="hover:text-blue-500 transition">WhatsApp</a></li>
+                <div class="space-y-4">
+                    <h5 class="text-slate-900 font-bold">Acesso Rápido</h5>
+                    <ul class="text-slate-600 space-y-2 text-sm">
+                        <li><a href="#sobre" class="hover:text-blue-600 transition">Quem Somos</a></li>
+                        <li><a href="#servicos" class="hover:text-blue-600 transition">Serviços</a></li>
+                        <li><a href="https://wa.me/5511974290558" target="_blank" class="hover:text-blue-600 transition">WhatsApp</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-bold">
+            <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-bold uppercase">
                 <p>© 2026 HyperMSA. Todos os direitos reservados.</p>
                 <div class="flex space-x-6">
-                    <a href="https://www.linkedin.com/company/msa-hyperautomacao" target="_blank" class="hover:text-white transition">LinkedIn</a>
+                    <a href="https://www.linkedin.com/company/msa-hyperautomacao" target="_blank" class="hover:text-blue-600 transition">LinkedIn</a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYPER MSA | Inteligência em Automação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Fundo ainda mais profundo para contraste máximo */
+            color: #f1f5f9;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent),
+                        radial-gradient(circle at bottom left, rgba(30, 58, 138, 0.15), transparent);
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.9); /* Mais opaco para leitura clara */
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #93c5fd, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Estilos de Imagem com Overlay de Contraste */
+        .service-card-img {
+            height: 12rem;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .service-card-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, #0f172a, rgba(15, 23, 42, 0.4));
+        }
+        
+        .service-bg-1 { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'); }
+        .service-bg-2 { background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800'); }
+        .service-bg-3 { background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800'); }
+    </style>
+</head>
+<body class="hero-gradient min-h-screen">
+
+    <!-- Header / Nav -->
+    <nav class="fixed w-full z-50 border-b border-white/10 bg-[#020617]/90 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-600/30">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <span class="text-xl font-bold tracking-tighter uppercase text-white">Hyper<span class="text-blue-500">Msa</span></span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-10 text-sm font-semibold">
+                <a href="#servicos" class="text-gray-300 hover:text-blue-400 transition">Serviços</a>
+                <a href="#sobre" class="text-gray-300 hover:text-blue-400 transition">Sobre</a>
+                <a href="#diferenciais" class="text-gray-300 hover:text-blue-400 transition">Diferenciais</a>
+                <a href="#contacto" class="bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Fale Connosco</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-56 pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-10">
+                <div class="inline-flex items-center space-x-3 bg-blue-600/20 border border-blue-500/40 px-5 py-2 rounded-full text-blue-300 text-sm font-bold">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
+                    <span>Inovação que move o futuro</span>
+                </div>
+                <h1 class="text-6xl lg:text-7xl font-extrabold leading-[1.1] text-white">
+                    Sua empresa no <br>
+                    <span class="text-gradient">piloto automático</span> <br>
+                    de alta performance.
+                </h1>
+                <p class="text-gray-300 text-xl max-w-lg leading-relaxed font-medium">
+                    Unimos tecnologia de ponta para transformar processos complexos em fluxos de trabalho ágeis e lucrativos.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="#contacto" class="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg text-center hover:bg-blue-700 transition shadow-2xl shadow-blue-600/40 transform hover:scale-105 transition-all">Começar Agora</a>
+                </div>
+            </div>
+
+            <!-- Feature Card Estruturado -->
+            <div class="relative">
+                <div class="glass-card p-10 rounded-[2.5rem] relative z-10 overflow-hidden border-white/20">
+                    <div class="absolute top-0 right-0 p-10 opacity-5">
+                        <svg class="w-48 h-48" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center shadow-inner shadow-white/20">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.673.337a4 4 0 01-2.506.327l-1.623-.325a2 2 0 00-1.183.15l-3.047 1.219a2 2 0 01-2.536-1.026l-.472-1.178a2 2 0 011.026-2.536l3.047-1.219a2 2 0 001.183-.15l1.623.325a4 4 0 012.506-.327l.673-.337a6 6 0 003.86-.517l2.387.477a2 2 0 001.022.547l.472 1.178a2 2 0 01-1.026 2.536l-3.047 1.219z"></path></svg>
+                        </div>
+                        <h3 class="text-4xl font-bold text-white">RPA & <br>Arquitetura Cloud</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed font-medium">Implementamos robôs que não apenas executam, mas otimizam a sua jornada digital com segurança máxima e ROI comprovado.</p>
+                        <div class="pt-4 flex items-center space-x-4 text-blue-400 font-bold group cursor-pointer">
+                            <span class="group-hover:mr-2 transition-all uppercase tracking-widest text-sm">Explorar Soluções</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -inset-10 bg-blue-500/10 blur-[100px] rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-32 px-6 bg-[#010409]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-blue-500 font-black uppercase tracking-[0.3em] text-sm mb-4">Portfólio de Soluções</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-white">Engenharia Digital Avançada</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Card -->
+                <div class="glass-card rounded-[2rem] overflow-hidden group border-white/10 hover:border-blue-500/50">
+                    <div class="service-card-img service-bg-1">
+                        <div class="absolute bottom-6 left-8 z-20">
+                            <span class="bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Automação</span>
+                        </div>
+                    </div>
+                    <div class="p-10 space-y-5">
+                        <h4 class="text-2xl font-bold text-white">RPA & Automação</h4>
+                        <p class="text-gray-400 leading-relaxed font-medium">
+                            Desenvolvimento de força de trabalho digital com UiPath para libertar talentos humanos de tarefas mecânicas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-[2rem] overflow-hidden group border-white/10 hover:border-blue-500/50">
+                    <div class="service-card-img service-bg-2">
+                        <div class="absolute bottom-6 left-8 z-20">
+                            <span class="bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Infraestrutura</span>
+                        </div>
+                    </div>
+                    <div class="p-10 space-y-5">
+                        <h4 class="text-2xl font-bold text-white">Arquitetura Cloud</h4>
+                        <p class="text-gray-400 leading-relaxed font-medium">
+                            Ambientes resilientes em AWS e Azure, focados em 100% de disponibilidade e gestão de custos inteligente.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-[2rem] overflow-hidden group border-white/10 hover:border-blue-500/50">
+                    <div class="service-card-img service-bg-3">
+                        <div class="absolute bottom-6 left-8 z-20">
+                            <span class="bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Inteligência</span>
+                        </div>
+                    </div>
+                    <div class="p-10 space-y-5">
+                        <h4 class="text-2xl font-bold text-white">Data & Analytics</h4>
+                        <p class="text-gray-400 leading-relaxed font-medium">
+                            Paineis estratégicos de BI que transformam dados complexos em decisões claras para a diretoria.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+            <div class="space-y-8">
+                <h2 class="text-blue-500 font-black uppercase tracking-widest text-sm">Sobre a MSA</h2>
+                <h3 class="text-5xl font-bold text-white leading-tight">Expertise que gera confiança digital.</h3>
+                <div class="space-y-6 text-lg text-gray-300 font-medium">
+                    <p>A Hyper MSA é composta por arquitetos de soluções certificados que acreditam que a tecnologia deve servir ao negócio, e não o contrário.</p>
+                    <p>Não somos apenas consultores; somos parceiros de execução. A nossa metodologia foca-se no ROI rápido e na sustentabilidade tecnológica a longo prazo.</p>
+                </div>
+                <div class="flex gap-10 pt-4">
+                    <div class="border-l-4 border-blue-600 pl-6">
+                        <div class="text-4xl font-black text-white">10+</div>
+                        <div class="text-gray-500 text-sm font-bold uppercase mt-1">Anos de Mercado</div>
+                    </div>
+                    <div class="border-l-4 border-blue-600 pl-6">
+                        <div class="text-4xl font-black text-white">100%</div>
+                        <div class="text-gray-500 text-sm font-bold uppercase mt-1">Foco em Resultados</div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" alt="Ambiente Tech" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-10 -right-10 bg-blue-600 p-8 rounded-3xl shadow-xl hidden lg:block">
+                    <div class="text-white font-bold text-xl italic">"Arquitetando o amanhã,<br>automatizando o hoje."</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="diferenciais" class="py-32 px-6 bg-blue-600/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-blue-500 font-black uppercase tracking-widest text-sm mb-4">Nossos Pilares</h2>
+                <h3 class="text-4xl font-bold text-white">O Compromisso MSA</h3>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="glass-card p-10 rounded-3xl text-center">
+                    <div class="mx-auto w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/20">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Segurança Nativa</h4>
+                    <p class="text-gray-400 text-sm font-medium">Criptografia e conformidade em todos os processos automatizados.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-3xl text-center">
+                    <div class="mx-auto w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/20">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Agilidade</h4>
+                    <p class="text-gray-400 text-sm font-medium">Entregas incrementais que geram valor desde a primeira semana.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-3xl text-center">
+                    <div class="mx-auto w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/20">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Suporte Ativo</h4>
+                    <p class="text-gray-400 text-sm font-medium">Monitorização constante dos seus robôs e ambientes cloud.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-3xl text-center">
+                    <div class="mx-auto w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/20">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Retorno Real</h4>
+                    <p class="text-gray-400 text-sm font-medium">Focamos em métricas que realmente impactam o balanço financeiro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="contacto" class="py-24 px-6 border-t border-white/10 bg-[#010409]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-16 mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-8">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tighter uppercase text-white">Hyper<span class="text-blue-500">Msa</span></span>
+                    </div>
+                    <p class="text-gray-400 text-lg leading-relaxed max-w-md">Líder em soluções de Hyperautomação e Cloud Enterprise para o mercado global.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Links Úteis</h5>
+                    <ul class="text-gray-400 space-y-4 font-medium">
+                        <li><a href="#servicos" class="hover:text-blue-400">Nossos Serviços</a></li>
+                        <li><a href="#sobre" class="hover:text-blue-400">Quem Somos</a></li>
+                        <li><a href="#diferenciais" class="hover:text-blue-400">Nossos Pilares</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Escritório</h5>
+                    <p class="text-gray-400 font-medium">São Paulo, Brasil<br>Av. Paulista, 1000</p>
+                    <p class="mt-4 text-blue-400 font-bold">contato@hypermsa.com.br</p>
+                </div>
+            </div>
+            
+            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-gray-500 text-sm">
+                    © 2026 MSA Hyperautomação. Todos os direitos reservados.
+                </div>
+                <div class="flex space-x-8">
+                    <a href="#" class="text-gray-400 hover:text-white transition">LinkedIn</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
