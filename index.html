@@ -1,140 +1,253 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L872MTCPP0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperMSA | Transformação Digital e Automação Inteligente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Base com Azul Profundo para realçar o Logo Branco */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  gtag('config', 'G-L872MTCPP0');
-</script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Azul Escuro (Slate 900) para dar contraste ao logo branco */
+            color: #f1f5f9; /* Texto claro */
+            word-wrap: break-word;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-  <!-- SEO -->
-  <title>MSA Hyperautomação | Automação de Processos, RPA e Governança de Dados</title>
-  <meta name="description" content="Consultoria especializada em automação de processos, RPA, integração de sistemas, BI, cloud e governança de dados. Transformamos desafios operacionais em resultados sustentáveis.">
-  <meta name="robots" content="index, follow">
+        /* Hero com gradiente que traz profundidade */
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(30, 58, 138, 0.2), transparent);
+            position: relative;
+            overflow: hidden;
+        }
 
-  <!-- Open Graph (LinkedIn / WhatsApp) -->
-  <meta property="og:title" content="MSA Hyperautomação | Automação de Processos e RPA">
-  <meta property="og:description" content="Consultoria em automação de processos, RPA, integração de sistemas, BI e governança de dados.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hypermsa.com.br">
-  <meta property="og:image" content="https://hypermsa.com.br/imagens/logo.svg">
+        /* Cards em estilo "Glassmorphism" para fundo escuro */
+        .glass-card {
+            background: rgba(147, 158, 176, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+        .text-gradient {
+            background: linear-gradient(to right, #c6d9f0, #3b82f6, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Imagens de fundo para seções */
+        .service-bg-1 { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'); }
+        .service-bg-2 { background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800'); }
+        .service-bg-3 { background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'); }
+        
+        /* Logo Ajustado para brilhar no fundo escuro */
+        .logo-img {
+            max-height: 120px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+        }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+        /* Título em branco para o fundo azul */
+        #titulo-menu {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: #ffffff;
+        }
+    </style>
 </head>
+<body class="min-h-screen">
 
-<div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:999;">
-  <div style="background:white; padding:30px; border-radius:10px; text-align:center; max-width:400px; margin:100px auto;">
-    <h2>Mensagem enviada com sucesso!</h2>
-    <p>Obrigado pelo contato. Retornaremos em breve.</p>
-    <button onclick="document.getElementById('popup').style.display='none'">Fechar</button>
-  </div>
-</div>
-
-<body>
-  <!--MENU SUPERIOR-->
-  <header id="menusuperior">
-    <div class="container-menu">
-      <a href="https://msantostkd.github.io/portifolio-mauricio/">
-        <img src="./imagens/logo.svg" id="logo" alt="Logo MSA">
-      </a>
-      <div class="texto-menu">
-        <h1 id="titulo-menu">MSA<br>Hyperautomação</h1>
-        <p id="texto-menusuperior">
-          Transformando desafios operacionais <br>
-          em resultados sustentáveis, unindo inteligência, <br>
-          automação e excelência em processos.
-        </p>
-      </div>
-    </div>
-  </header>
-
-  <!--MENU SOBRE-->
-  <div id="sobre">
-    <h2>Sobre nós</h2>
-    <p>
-      A MSA Hyperautomação é uma consultoria especializada em RPA, integração de sistemas, BI e otimização de processos.<br>
-      Atuamos com foco em gerar eficiência operacional e inovação contínua para empresas de todos os portes.
-    </p>
-  </div>
-
-  <div id="servicos">    
-    <section class="servicos">
-      <h2>Nossos Serviços</h2>
-
-      <div class="servicos-destaque">
-        <div class="bloco-servico">
-          <img src="./imagens/automation.svg" alt="Ícone RPA">
-          <h3>Automação Inteligente com RPA</h3>
-          <p>
-            Expertise em desenvolvimento, implantação e governança de automações utilizando plataformas líderes como Automation Anywhere, Blue Prism, Power Automate e UiPath.
-          </p>
+    <!-- Navegação (Fundo Azul Translúcido) -->
+    <nav class="fixed w-full z-50 border-b border-white/5 bg-[#0f172a]/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center">
+                <!-- Agora o logo branco ficará visível neste fundo azul escuro -->
+                <img src="imagens/logo.svg" alt="HyperMSA Logo" class="logo-img" onerror="this.onerror=null; this.src='https://hypermsa.com.br/logo.png';">
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-bold text-slate-300">
+                <a href="#sobre" class="hover:text-white transition">Quem Somos</a>
+                <a href="#servicos" class="hover:text-white transition">Serviços</a>
+                <a href="#contato" class="bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-900/40">Fale Conosco</a>
+            </div>
         </div>
+    </nav>
 
-        <div class="bloco-servico">
-          <img src="./imagens/cloud_architecture.svg" alt="Ícone Cloud">
-          <h3>Arquitetura de Soluções e Cloud</h3>
-          <p>
-            Tradução de requisitos de negócio em soluções arquitetônicas escaláveis em Azure, AWS e GCP.
-          </p>
-        </div>
+    <!-- Hero Section -->
+    <header class="hero-gradient pt-48 pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="texto-menu space-y-8">
+                <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full text-blue-400 text-sm font-bold">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+                    <span>Inteligência que escala seu negócio</span>
+                </div>
+                <h1 id="titulo-menu">
+                    O Futuro da <br>
+                    <span class="text-gradient">Automação</span> <br>
+                    começa aqui.
+                </h1>
+                <p id="texto-menusuperior" class="text-slate-400 text-lg max-w-lg leading-relaxed font-medium">
+                    A HyperMSA é especialista em Hyperautomação, unindo RPA, Cloud e Inteligência Artificial para eliminar burocracias e acelerar resultados.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5511974290558" target="_blank" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-center hover:bg-blue-700 transition shadow-xl shadow-blue-600/40">
+                        Começar Transformação
+                    </a>
+                </div>
+            </div>
 
-        <div class="bloco-servico">
-          <img src="./imagens/fullstack_agile.svg" alt="Ícone Dev">
-          <h3>Desenvolvimento Full-Stack &<br>Metodologias Ágeis</h3>
-          <p>
-            Desenvolvimento com Python, C#, JavaScript e práticas de CI/CD e métodos ágeis.
-          </p>
+            <div class="relative">
+                <div class="glass-card p-10 rounded-3xl relative z-10 overflow-hidden">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center shadow-inner">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white">Eficiência Operacional</h3>
+                        <p class="text-slate-300 leading-relaxed">Não apenas automatizamos tarefas, redesenhamos processos para que sua equipe foque no que é estratégico.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3 text-sm font-bold text-slate-200">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                                <span>Redução de erros humanos em até 99%</span>
+                            </li>
+                            <li class="flex items-center space-x-3 text-sm font-bold text-slate-200">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                                <span>Operação 24/7 sem interrupções</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="absolute -inset-6 bg-blue-500/20 blur-3xl rounded-full opacity-50"></div>
+            </div>
         </div>
-      </div>
+    </header>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-24 px-6 bg-[#0f172a]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" alt="Equipe Tech" class="rounded-3xl shadow-2xl border border-white/10">
+            </div>
+            <div class="space-y-6 order-1 md:order-2 text-left">
+                <h2 class="text-blue-500 font-bold uppercase tracking-wider text-sm">Quem Somos</h2>
+                <h3 class="text-4xl font-extrabold text-white">Especialistas em <span class="text-blue-500">Hyperautomação</span></h3>
+                <p class="text-slate-400 leading-relaxed text-lg">
+                    Nascemos com a missão de democratizar a alta tecnologia para empresas que buscam escala. Atuamos na intersecção entre processos de negócio e tecnologia de ponta, entregando soluções que geram ROI imediato.
+                </p>
+                <p class="text-slate-400 leading-relaxed text-lg">
+                    Nossa equipe é certificada nas principais ferramentas do mercado (UiPath, Microsoft, AWS), garantindo segurança e governança em cada linha de código.
+                </p>
+            </div>
+        </div>
     </section>
 
-    <section class="contato">
-      <h2>Contato</h2>
-      <form id="formulario">
-        <input type="text" name="nome" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu e-mail" required />
-        <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
-        <button type="submit">Enviar</button>    
-      </form>
+    <!-- Serviços -->
+    <section id="servicos" class="py-24 px-6 bg-black/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-sm font-bold text-blue-500 uppercase tracking-widest">Nossas Soluções</h2>
+                <h3 class="text-4xl font-bold text-white">O que fazemos por você</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card rounded-3xl overflow-hidden group">
+                    <div class="h-48 bg-cover bg-center relative service-bg-1">
+                        <div class="absolute inset-0 bg-blue-900/60 group-hover:bg-blue-600/40 transition-colors"></div>
+                    </div>
+                    <div class="p-8 space-y-4">
+                        <h4 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">RPA (Robotic Process Automation)</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Criação de força de trabalho digital para lidar com tarefas repetitivas e baseadas em regras em qualquer software.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card rounded-3xl overflow-hidden group">
+                    <div class="h-48 bg-cover bg-center relative service-bg-2">
+                        <div class="absolute inset-0 bg-blue-900/60 group-hover:bg-blue-600/40 transition-colors"></div>
+                    </div>
+                    <div class="p-8 space-y-4">
+                        <h4 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Infraestrutura & Cloud</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Migração, otimização e gestão de ambientes em nuvem, garantindo disponibilidade e baixo custo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card rounded-3xl overflow-hidden group">
+                    <div class="h-48 bg-cover bg-center relative service-bg-3">
+                        <div class="absolute inset-0 bg-blue-900/60 group-hover:bg-blue-600/40 transition-colors"></div>
+                    </div>
+                    <div class="p-8 space-y-4">
+                        <h4 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Business Intelligence</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Dashboards em tempo real para tomada de decisão baseada em dados, não em suposições.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </div>
 
-  <script>
-    const form = document.getElementById("formulario");
+    <!-- Rodapé -->
+    <footer id="contato" class="py-20 px-6 border-t border-white/5 bg-[#0b1222]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2 space-y-6 text-left">
+                    <img src="imagens/logo.svg" alt="HyperMSA Logo" class="logo-img" onerror="this.onerror=null; this.src='https://hypermsa.com.br/logo.png';">
+                    <p class="text-slate-400 max-w-sm text-left font-medium">
+                        Sua parceira estratégica na jornada da transformação digital. Fale com um especialista hoje mesmo.
+                    </p>
+                </div>
+                
+                <div class="space-y-4 text-left">
+                    <h5 class="text-white font-bold">Contato</h5>
+                    <ul class="text-slate-400 space-y-2 text-sm font-semibold">
+                        <li>📍 São Paulo, SP</li>
+                        <li>✉️ contato@hypermsa.com.br</li>
+                        <li>📞 (11) 97429-0558</li>
+                    </ul>
+                </div>
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+                <div class="space-y-4 text-left">
+                    <h5 class="text-white font-bold">Menu</h5>
+                    <ul class="text-slate-400 space-y-2 text-sm font-semibold">
+                        <li><a href="#sobre" class="hover:text-blue-500 transition">Quem Somos</a></li>
+                        <li><a href="#servicos" class="hover:text-blue-500 transition">Serviços</a></li>
+                        <li><a href="https://wa.me/5511974290558" target="_blank" class="hover:text-blue-500 transition">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-bold">
+                <p>© 2026 HyperMSA. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/company/msa-hyperautomacao" target="_blank" class="hover:text-white transition">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-      const formData = new FormData(form);
-
-      fetch("https://api.sheetmonkey.io/form/wo6qLqoQErV9c96r11qxCH", {
-        method: "POST",
-        body: formData
-      })
-      .then(() => {
-        document.getElementById("popup").style.display = "block";
-        form.reset();
-      })
-      .catch(() => {
-        alert("Ocorreu um erro ao enviar sua mensagem.");
-      });
-    });
-  </script>
-
-  <footer>
-    <p>&copy; 2025 MSA Hyperautomação | Todos os direitos reservados</p>
-  </footer>
 </body>
 </html>
